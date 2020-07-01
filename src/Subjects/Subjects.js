@@ -1,10 +1,11 @@
 import React, {useEffect} from "react";
 import {connect} from 'react-redux';
 import Grid from '@material-ui/core/Grid';
+
 import {searchSubj, filterData} from "../redux/actions/serachSubjects";
 import './subjects.css';
 
-const Subjects = ({data, filteredData,searchSubj,filterData, price}) => {
+const Subjects = ({filteredData,searchSubj, price}) => {
     let renderSubjects;
 
     useEffect(() => {
@@ -14,7 +15,15 @@ const Subjects = ({data, filteredData,searchSubj,filterData, price}) => {
 
     if (filteredData.length > 0 ) {
         renderSubjects = filteredData.map(item => {
+            let gradeString;
             const imgUrl = `https://www.imumk.ru/svc/coursecover/${item.courseId}`;
+            const gradeArr = item.grade.split(';');
+            if(gradeArr.length > 1) {
+                gradeString = `${gradeArr[0]}-${gradeArr[gradeArr.length - 1]} классы`;
+            }else {
+                gradeString = `${gradeArr[0]} класс`;
+            }
+
             return(
                 <Grid item xs={12} sm={4} md={3} lg={2} key={item.courseId} >
                 <div className="subjects__item" >
@@ -26,7 +35,7 @@ const Subjects = ({data, filteredData,searchSubj,filterData, price}) => {
                             {item.subject}
                         </div>
                         <div className="subjects__grade">
-                            {item.grade}
+                            {gradeString}
                         </div>
                         <div className="subjects__genre">
                             {item.genre}
@@ -58,8 +67,8 @@ const Subjects = ({data, filteredData,searchSubj,filterData, price}) => {
 }
 
 const mapStateToProps = (state) => {
+
     return{
-        data: state.searchReducer.data,
         price: state.searchReducer.price,
         filteredData: state.searchReducer.filteredData
     }
