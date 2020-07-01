@@ -52,6 +52,9 @@
     align-items: center;
     justify-content: center;
 
+    &:hover {
+      background-color: #02b0e5;
+    }
 
     > a {
       text-decoration: none;
