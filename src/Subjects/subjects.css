@@ -1,0 +1,41 @@
+.subjects img {
+  width: 100%;
+  border-radius: 10px 10px 0px 0px; }
+.subjects__img {
+  overflow: hidden;
+  height: 134px;
+  background: #ddd; }
+.subjects__item {
+  width: 170px;
+  min-height: 260px;
+  border: solid 1px #b5b5b5;
+  border-radius: 10px;
+  background: #fff;
+  overflow: hidden; }
+.subjects__info {
+  padding: 10px 16px; }
+.subjects__more {
+  margin-top: 15px;
+  font-size: 12px;
+  font-weight: 600; }
+  .subjects__more > a {
+    text-decoration: none;
+    color: #00c1ff; }
+.subjects__genre {
+  font-size: 11px; }
+.subjects__btn {
+  margin-top: 10px;
+  padding: .4em .1em;
+  border-radius: 6px;
+  background: #00c1ff;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .subjects__btn > a {
+    text-decoration: none;
+    color: #fff; }
+
+.MuiFormControl-root {
+  width: 150px; }
+
+/*# sourceMappingURL=subjects.css.map */

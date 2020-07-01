@@ -1,0 +1,10 @@
+.search {
+  width: 100%;
+  margin-bottom: 20px; }
+  .search > .MuiFormControl-root {
+    width: 250px;
+    margin-right: 20px; }
+  .search > .MuiFormGroup-row {
+    flex-direction: row; }
+
+/*# sourceMappingURL=searchbar.css.map */
