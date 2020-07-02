@@ -63,7 +63,12 @@ const filterData = (data, filterSubj, filterGenre, filterGrade, keyword) => {
     const newData = data.filter(item => {
         let filteredData = true;
         if (keyword && (keyword.length > 2)) {
-            filteredData = filteredData && (item.title.searchSubj(keyword));
+            const strExist = item.title.toLowerCase().indexOf(keyword.toLowerCase());
+
+            //нечеткий поиск
+            // filteredData = filteredData && (item.title.searchSubj(keyword));
+
+            filteredData = filteredData && (strExist > -1);
         }
         if (filterSubj != 'default') {
             filteredData = filteredData && (filterSubj == item.subject);
